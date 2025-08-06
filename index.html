@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern hello world webpage with interactive elements">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Background decoration -->
+        <div class="background-decoration">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="content-card">
+                <div class="greeting-section">
+                    <h1 class="main-title" id="mainTitle">
+                        <span class="title-word" data-text="Hello">Hello</span>
+                        <span class="title-word" data-text="World">World</span>
+                    </h1>
+                    
+                    <p class="subtitle" id="subtitle">
+                        Welcome to a modern web experience
+                    </p>
+                </div>
+
+                <div class="interactive-section">
+                    <div class="greeting-customizer">
+                        <label for="nameInput" class="input-label">Personalize your greeting:</label>
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="nameInput" 
+                                placeholder="Enter your name" 
+                                class="name-input"
+                                maxlength="50"
+                                autocomplete="name"
+                            >
+                            <button type="button" class="update-btn" id="updateBtn" aria-label="Update greeting">
+                                <span class="btn-text">Update</span>
+                                <span class="btn-icon">✨</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="theme-controls">
+                        <label class="theme-label">Choose your theme:</label>
+                        <div class="theme-buttons" role="radiogroup" aria-label="Theme selection">
+                            <button 
+                                type="button" 
+                                class="theme-btn active" 
+                                data-theme="default"
+                                aria-pressed="true"
+                                role="radio"
+                            >
+                                <span class="theme-preview theme-default"></span>
+                                Default
+                            </button>
+                            <button 
+                                type="button" 
+                                class="theme-btn" 
+                                data-theme="ocean"
+                                aria-pressed="false"
+                                role="radio"
+                            >
+                                <span class="theme-preview theme-ocean"></span>
+                                Ocean
+                            </button>
+                            <button 
+                                type="button" 
+                                class="theme-btn" 
+                                data-theme="sunset"
+                                aria-pressed="false"
+                                role="radio"
+                            >
+                                <span class="theme-preview theme-sunset"></span>
+                                Sunset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-number" id="visitCounter">1</span>
+                        <span class="stat-label">Page Views</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="timeDisplay">00:00</span>
+                        <span class="stat-label">Current Time</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Hello World Page. Built with modern web technologies.</p>
+        </footer>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Success notification -->
+    <div class="notification" id="notification" role="alert" aria-live="polite">
+        <span class="notification-text"></span>
+        <button type="button" class="notification-close" aria-label="Close notification">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
